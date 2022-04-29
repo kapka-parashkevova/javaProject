@@ -6,27 +6,35 @@ public class Add {
     private List<Product> productList = new LinkedList<>();
 
     public void addProducts(Product productToBeAdded) throws InvalidException {
-       for(Product current : productList){
-            if(current.getName() == productToBeAdded.getName()){
-                if(current.getExpiryDate() != productToBeAdded.getExpiryDate()){
+        if(productList.size() <= 0){
+            productList.add(productToBeAdded);
+        }else {
+            for (Product current : productList) {
+                if (current.getName() == productToBeAdded.getName()) {
                     int section = current.getLocation().getSection();
-                    int shelf =  current.getLocation().getShelf() + 1;
-                    int num = current.getLocation().getNumber();
-                   Location location = new Location(section, shelf, num);
-                   productToBeAdded.setLocation(location);
-                }else {
-                    int section = current.getLocation().getSection();
-                    int shelf = current.getLocation().getShelf();
-                    int num = current.getLocation().getNumber() + 1;
-                 //   if(num < maxNumbers)
-                    Location location = new Location(section, shelf, num);
-                    productToBeAdded.setLocation(location);
+                    int shelf, num;
+                    if (current.getExpiryDate().equals(productToBeAdded.getExpiryDate())) {
+                        shelf = current.getLocation().getShelf();
+                        num = current.getLocation().getNumber() + 1;
+                        //   if(num < maxNumbers)
+                        Location location = new Location(section, shelf, num);
+                        productToBeAdded.setLocation(location);
+                    } else {
+                        shelf = current.getLocation().getShelf() + 1;
+                        num = current.getLocation().getNumber();
+                        Location location = new Location(section, shelf, num);
+                        productToBeAdded.setLocation(location);
+                    }
+                    productList.add(productToBeAdded);
+                    System.out.println("success!");
+                }
+
                 }
             }
-           System.out.println("success!");
         }
 
-    }
+
+
 
     public void printProducts(){
         if(productList.size() >  0) {
@@ -44,6 +52,7 @@ public class Add {
     }
 
     }
+
 
 
     /*

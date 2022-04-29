@@ -56,11 +56,11 @@ public class Product {
         if (this == o) return true;
         if (!(o instanceof Product)) return false;
         Product product = (Product) o;
-        return Objects.equals(getName(), product.getName());
+        return Objects.equals(getExpiryDate(), product.getExpiryDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName());
+        return Objects.hash(getExpiryDate());
     }
 }

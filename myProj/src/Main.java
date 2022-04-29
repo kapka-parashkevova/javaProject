@@ -17,7 +17,7 @@ public class Main {
             Product pr4 = new Product("Локум", LocalDate.of(2022, 9, 12),
                     LocalDate.of(2021, 6, 29), "България-ООД",
                     "грама", 11, "с вкус на нар");
-            Product pr5 = new Product("Прясно мляко", LocalDate.of(2022, 12, 13),
+            Product pr5 = new Product("Прясно мляко", LocalDate.of(2022, 9, 01),
                     LocalDate.of(2022, 05, 10), "Бор-Чвор",
                     "литри", 7, "прясно мляко");
             Product pr6 = new Product("Пилечко месо", LocalDate.of(2022, 9, 15),
@@ -30,7 +30,9 @@ public class Main {
             addProd.addProducts(pr3);
             addProd.addProducts(pr4);
             addProd.addProducts(pr5);
-              addProd.printProducts();
+            addProd.addProducts(pr6);
+
+            addProd.printProducts();
         } catch (InvalidException e) {
             e.printStackTrace();
         }
