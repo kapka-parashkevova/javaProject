@@ -1,3 +1,5 @@
+package operations;
+
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
@@ -6,18 +8,18 @@ import java.util.Objects;
 public class Product {
 
     private String name;
-    private LocalDate expiryDate;
+    private int expiryDate;
     private LocalDate dateOfReceipt;
     private String manufacturer;
     private String unit;
     private int count;
     private Location location;
     private String comment;
-   // private boolean isLocationFreeOrNot = true; // svobodna
+    // private boolean isLocationFreeOrNot = true; // svobodna
 
 
-    public Product(String name, LocalDate expiryDate, LocalDate dateOfReceipt, String manufacturer, String unit,
-                   int count,/* Location location,*/ String comment) throws InvalidException {
+    public Product(String name, int expiryDate, LocalDate dateOfReceipt, String manufacturer, String unit,
+                   int count, Location location, String comment) throws InvalidException {
         if(name ==null || name .isEmpty() ) throw new InvalidException("The name of product cannot be null or empty!");
         this.name = name;
         this.expiryDate = expiryDate;
@@ -30,14 +32,14 @@ public class Product {
         if(count <= 0) throw new InvalidException("Count can not be less than zero.");
         this.count = count;
 
-      //  this.location = location;
+        this.location = location;
         this.comment = comment;
     }
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
-    public LocalDate getExpiryDate() {return expiryDate;}
-    public void setExpiryDate(LocalDate expiryDate) {this.expiryDate = expiryDate;}
+    public int getExpiryDate() {return expiryDate;}
+    public void setExpiryDate(int expiryDate) {this.expiryDate = expiryDate;}
     public LocalDate getDateOfReceipt() {return dateOfReceipt;}
     public void setDateOfReceipt(LocalDate dateOfReceipt) {this.dateOfReceipt = dateOfReceipt;}
     public String getManufacturer() {return manufacturer;}
@@ -62,5 +64,17 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(getExpiryDate());
+    }
+
+    @Override
+    public String toString() {
+        return "срок на годност " + expiryDate +
+                " дни, дата на постъпване в склада " + dateOfReceipt +
+                ", производител'" + manufacturer + '\'' +
+                ", мерна единица: " + unit + '\'' +
+                ", брой " + count +
+                ", местоположение:" + location +
+                ", коментар " + comment + '\'' ;
+
     }
 }
