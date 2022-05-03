@@ -69,10 +69,7 @@ public class Add {
     private Location changeLocation(Location current, Location comparedWith) throws InvalidException {
         Location result = new Location(0 , 0,0); // стойност по подразбиране, може да са и 0
         if (current.equals(comparedWith)) {
-            // можете да сложите допълнителни проверки за капацитет
-            // дадена локация има определен брой рафтове, а всеки от тях - определен брой номера
-            // в зависимост от това ще сетвате атрибутите на резултата
-            // в конкретната имплементация, продукта се разполага в същата секция, на същия рафт, но на следващо място
+
             result.setSection(current.getSection());
             result.setShelf(current.getShelf());
             result.setNumber(current.getNumber() + 1);
