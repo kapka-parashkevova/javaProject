@@ -28,11 +28,10 @@ public class Main {
             Product pr4 = new Product("Локум", 50,
                    LocalDate.of(2021, 6, 29), "България-ООД",
                     "грама", 11, loc4, "с вкус на нар");
-
             Product pr5 = new Product("Прясно мляко", 70,
                     LocalDate.of(2022, 05, 10), "Бор-Чвор",
                     "литри", 7, loc1,"млечен продукт");
-            Product pr6 = new Product("Пилечко месо", 40,
+            Product pr6 = new Product("Пилещко месо", 40,
                     LocalDate.of(2022, 03, 28), "Бистра-ООД",
                    "килограми", 8,loc4, "месо от гърди");
 
