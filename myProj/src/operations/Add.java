@@ -16,6 +16,7 @@ public class Add {
             if (entry.getKey().equals(product.getName())) {
                 List<Product> products = entry.getValue();
                 replaceLocationIfExists(products, product);
+                productMap.put(product.getName(), products);
             }
         }
     }
@@ -30,7 +31,7 @@ public class Add {
     }
 
     private int returnCount(String name){
-        List<Product> result = new ArrayList<>();
+
         int count=0;
         for (Product current : productList) {
             if (current.getName().equals(name)) {
@@ -67,9 +68,8 @@ public class Add {
     }
 
     private Location changeLocation(Location current, Location comparedWith) throws InvalidException {
-        Location result = new Location(0 , 0,0); // стойност по подразбиране, може да са и 0
+        Location result = new Location(0 , 0,0);
         if (current.equals(comparedWith)) {
-
             result.setSection(current.getSection());
             result.setShelf(current.getShelf());
             result.setNumber(current.getNumber() + 1);
@@ -78,5 +78,6 @@ public class Add {
             // ако локациите са различни, запазваме ги без промяна
             return comparedWith;
     }
+
 }
 
