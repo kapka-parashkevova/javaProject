@@ -25,7 +25,6 @@ public class Add {
         int count = 0;
         for (Map.Entry<String, List<Product>> entry : productMap.entrySet()) {
            // count += entry.getValue().getCount();
-
             System.out.println(entry.getKey() + ": " + Arrays.toString(entry.getValue().toArray()) + " total count: " + returnCount(entry.getKey()));
         }
     }
@@ -41,6 +40,8 @@ public class Add {
 
         return count;
     }
+
+
     private void fillMap() {
         for (Product current : productList) {
             productMap.put(current.getName(), getProductByName(current.getName()));

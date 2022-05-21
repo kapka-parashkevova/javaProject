@@ -20,7 +20,7 @@ public class Product {
 
     public Product(String name, int expiryDate, LocalDate dateOfReceipt, String manufacturer, String unit,
                    int count, Location location, String comment) throws InvalidException {
-        if(name ==null || name .isEmpty() ) throw new InvalidException("The name of product cannot be null or empty!");
+        if(name ==null || name.isEmpty() ) throw new InvalidException("The name of product cannot be null or empty!");
         this.name = name;
         this.expiryDate = expiryDate;
         this.dateOfReceipt = dateOfReceipt;

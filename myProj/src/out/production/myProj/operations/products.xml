@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "no"?>
+<products>
+    <product  nameOfProduct= "Milk" >
+        <expiryDate> 70</expiryDate>
+        <dateOfReceipt> 2022-02-28 </dateOfReceipt>
+        <manufacturer> Olympus </manufacturer>
+        <unit> liter </unit>
+        <count> 10 </count>
+        <location><section>section 1 </section><shelf>shelf 2 </shelf><number> number 3 </number></location>
+        <comment> fresh </comment>
+    </product>
+
+
+    <product  nameOfProduct= "Cheese" >
+        <expiryDate> 50</expiryDate>
+        <dateOfReceipt> 2022-03-14 </dateOfReceipt>
+        <manufacturer> Mainland </manufacturer>
+        <unit> grams </unit>
+        <count> 13 </count>
+        <location><section> section 2 </section><shelf>shelf 5 </shelf><number>number 1 </number></location>
+        <comment> cheddar </comment>
+    </product>
+
+
+    <product  nameOfProduct= "Pizza" >
+        <expiryDate> 150</expiryDate>
+        <dateOfReceipt> 2022-03-07 </dateOfReceipt>
+        <manufacturer> Napoly </manufacturer>
+        <unit> grams </unit>
+        <count> 50 </count>
+        <location><section> section 2 </section><shelf> shelf 2 </shelf><number> number 3 </number></location>
+        <comment> freeze </comment>
+    </product>
+
+
+</products>

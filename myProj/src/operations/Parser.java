@@ -13,7 +13,7 @@ import org.xml.sax.SAXException;
 
 public class Parser {
 
-    public  void readXML() {
+    public  void readXML(String filename) {
 
         try {
             File inputFile = new File("D:\\javaProject\\myProj\\src\\operations\\products.xml");
@@ -37,7 +37,7 @@ public class Parser {
                     System.out.println("Manufacturer:" + eElement.getElementsByTagName("manufacturer").item(0).getTextContent());
                     System.out.println("Unit:" + eElement.getElementsByTagName("unit").item(0).getTextContent());
                     System.out.println("Count:" + eElement.getElementsByTagName("count").item(0).getTextContent());
-                    System.out.println("Location:" + eElement.getElementsByTagName("location").item(0).getTextContent());
+                    System.out.println("Location:" + eElement.getElementsByTagName("a").item(0).getTextContent());
                     System.out.println("Comment:" + eElement.getElementsByTagName("comment").item(0).getTextContent());
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                 }
